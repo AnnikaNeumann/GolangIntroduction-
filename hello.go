@@ -5,40 +5,29 @@ package main
 //if lines are commented out, the imported package (such as strings) will be removed
 import (
 	"fmt"
-	"sort"
+	// "sort"
 )
 
 func main() {
+	// x := 0
+	// for x < 5 {
+	// 	fmt.Println("value of x is:", x)
+	// 	x++
+	// }
 
-	// greeting := "Hello there friends"
+	// for i := 0; i < 5; i++{
+	// 			fmt.Println("value of i is:", i)
 
-	// fmt.Println(strings.Contains(greeting, "Hello"))
-	// //replaces Hello with Hi
-	// fmt.Println(strings.ReplaceAll(greeting, "Hello", "Hi"))
-	// fmt.Println(strings.ToUpper(greeting))
-
-	//searches for the index of a letter in the greeting
-	// fmt.Println(strings.Index(greeting, "ll"))
-	// fmt.Println((strings.Split(greeting, " ")))
-
-	//the original value is unchanged
-	// fmt.Println("original string value=", greeting)
-
-	ages := []int{45, 55, 65, 75, 20, 40, 19}
-	sort.Ints(ages)
-
-	fmt.Println(ages)
-
-	index := sort.SearchInts(ages, 75)
-	fmt.Println(index)
+	// }
 
 	names := []string{"Annika", "Elliot", "Mario", "Zelda"}
-	sort.Strings(names)
-	fmt.Println(names)
 
-	fmt.Println(sort.SearchStrings(names, "Mario"))
+	 for i := 0; i < len(names); i++{
+				fmt.Println(names[i])
 
-}
+	}
+
+	
 
 //strings
 // fmt.Println("Hello, Annika!")
@@ -124,3 +113,33 @@ func main() {
 
 // rangeOne = append(rangeOne, "Koopa")
 // fmt.Println(rangeOne)
+
+// greeting := "Hello there friends"
+
+	// fmt.Println(strings.Contains(greeting, "Hello"))
+	// //replaces Hello with Hi
+	// fmt.Println(strings.ReplaceAll(greeting, "Hello", "Hi"))
+	// fmt.Println(strings.ToUpper(greeting))
+
+	//searches for the index of a letter in the greeting
+	// fmt.Println(strings.Index(greeting, "ll"))
+	// fmt.Println((strings.Split(greeting, " ")))
+
+	//the original value is unchanged
+	// fmt.Println("original string value=", greeting)
+
+// 	ages := []int{45, 55, 65, 75, 20, 40, 19}
+// 	sort.Ints(ages)
+
+// 	fmt.Println(ages)
+
+// 	index := sort.SearchInts(ages, 75)
+// 	fmt.Println(index)
+
+// 	names := []string{"Annika", "Elliot", "Mario", "Zelda"}
+// 	sort.Strings(names)
+// 	fmt.Println(names)
+
+// 	fmt.Println(sort.SearchStrings(names, "Mario"))
+//
+}
