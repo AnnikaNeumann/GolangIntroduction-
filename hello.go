@@ -7,52 +7,11 @@ import (
 	"fmt"
 	// "sort"
 	// "math"
-	"strings"
+	// "strings"
 )
 
-// RETURN MULTIPLE VALUES 
 
-func getInitials(n string) (string, string){
-//function takes in two strings and slices them into separate ones whereever there is a space between, capitalize first letter
-	s := strings.ToUpper(n)
-	names := strings.Split(s, " ")
-
-	//create another slice [] for the initials of type string
-	var initials []string
-	//cycle through the names in a for loop, index not needed but value 
-	for _, v := range names {
-		// get the name and take first letter of it and put inside initials
-		//take the initial and append the value of the first letter of the name
-		initials = append(initials, v[:1])
-	}
-
-	//check how many initials we have - if >1 means we have two initials
-	if len(initials) > 1{
-		return initials[0], initials[1]
-	}
-	//if there is no 2nd initial then we return an underscore
-	return initials[0], "_"
-
-}
-
-func main() {
-	//store two variables in value
-	fn1, sn1 := getInitials("elliot newman")
-	fmt.Println(fn1, sn1)
-
-	fn2, sn2 := getInitials("captain picard")
-	fmt.Println(fn2, sn2)
-
-	//should return underscore, no second initial
-	fn3, sn3 := getInitials("kathryn")
-	fmt.Println(fn3, sn3)
-	
-	OUTPUT 
-	E N 
-	C P
-	K _
-
-}
+// 
 
 //strings
 // fmt.Println("Hello, Annika!")
@@ -265,3 +224,62 @@ func main() {
 // }
 
 // above functions can be called inside the main function down here
+
+// RETURN MULTIPLE VALUES 
+
+// func getInitials(n string) (string, string){
+// 	//function takes in two strings and slices them into separate ones whereever there is a space between, capitalize first letter
+// 		s := strings.ToUpper(n)
+// 		names := strings.Split(s, " ")
+	
+// 		//create another slice [] for the initials of type string
+// 		var initials []string
+// 		//cycle through the names in a for loop, index not needed but value 
+// 		for _, v := range names {
+// 			// get the name and take first letter of it and put inside initials
+// 			//take the initial and append the value of the first letter of the name
+// 			initials = append(initials, v[:1])
+// 		}
+	
+// 		//check how many initials we have - if >1 means we have two initials
+// 		if len(initials) > 1{
+// 			return initials[0], initials[1]
+// 		}
+// 		//if there is no 2nd initial then we return an underscore
+// 		return initials[0], "_"
+	
+// 	}
+	
+// 	func main() {
+// 		//store two variables in value
+// 		fn1, sn1 := getInitials("elliot newman")
+// 		fmt.Println(fn1, sn1)
+	
+// 		fn2, sn2 := getInitials("captain picard")
+// 		fmt.Println(fn2, sn2)
+	
+// 		//should return underscore, no second initial
+// 		fn3, sn3 := getInitials("kathryn")
+// 		fmt.Println(fn3, sn3)
+		
+// 		OUTPUT 
+// 		E N 
+// 		C P
+// 		K _
+// }
+
+//PACKAGE SCOPE
+
+// var score = 99.5
+
+// func main(){
+// //accesses sayHello function and points variable from greeting file
+// 	sayHello("elliot")
+
+// 	for _, v := range points{
+// 		fmt.Println(v)
+// 	}
+
+// 	showScore()
+
+// }
