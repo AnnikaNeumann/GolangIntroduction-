@@ -6,46 +6,51 @@ package main
 import (
 	"fmt"
 	// "sort"
-	"math"
+	// "math"
+	"strings"
 )
 
-//Using functions
+// RETURN MULTIPLE VALUES 
 
-//name string
-func sayGreeting(n string) {
-	fmt.Printf("Good morning %v \n", n)
-}
+func getInitials(n string) (string, string){
+//function takes in two strings and slices them into separate ones whereever there is a space between, capitalize first letter
+	s := strings.ToUpper(n)
+	names := strings.Split(s, " ")
 
-func sayBye(n string) {
-	fmt.Printf("Goodbye %v \n", n)
-}
-
-//calling a function for each element inside an array
-func cycleNames(n []string, f func(string)) {
-	for _, v := range n {
-		f(v)
+	//create another slice [] for the initials of type string
+	var initials []string
+	//cycle through the names in a for loop, index not needed but value 
+	for _, v := range names {
+		// get the name and take first letter of it and put inside initials
+		//take the initial and append the value of the first letter of the name
+		initials = append(initials, v[:1])
 	}
-}
-func circleArea(r float64) float64 {
-	return math.Pi * r * r
+
+	//check how many initials we have - if >1 means we have two initials
+	if len(initials) > 1{
+		return initials[0], initials[1]
+	}
+	//if there is no 2nd initial then we return an underscore
+	return initials[0], "_"
+
 }
 
-// above functions can be called inside the main function down here
 func main() {
+	//store two variables in value
+	fn1, sn1 := getInitials("elliot newman")
+	fmt.Println(fn1, sn1)
 
-	// sayGreeting("Annika")
-	// sayGreeting("Elliot")
-	// sayBye("Dexter")
+	fn2, sn2 := getInitials("captain picard")
+	fmt.Println(fn2, sn2)
 
-	//cycles through array of names which are strings and call the function sayGreeting
-	cycleNames([]string{"Captain Picard", "Seven Of Nine", "Data"}, sayGreeting)
-	cycleNames([]string{"Captain Picard", "Seven Of Nine", "Data"}, sayBye)
-
-	a1 := circleArea(10.5)
-	a2 := circleArea(15)
-
-	fmt.Println(a1, a2)
-	fmt.Printf("circle 1 is %0.3f and circle 2 is %0.3f", a1, a2)
+	//should return underscore, no second initial
+	fn3, sn3 := getInitials("kathryn")
+	fmt.Println(fn3, sn3)
+	
+	OUTPUT 
+	E N 
+	C P
+	K _
 
 }
 
@@ -222,3 +227,41 @@ func main() {
 
 // 	fmt.Printf("the value at pos %v is %v \n", index, value)
 // }
+
+// sayGreeting("Annika")
+	// sayGreeting("Elliot")
+	// sayBye("Dexter")
+
+	//cycles through array of names which are strings and call the function sayGreeting
+	// cycleNames([]string{"Captain Picard", "Seven Of Nine", "Data"}, sayGreeting)
+	// cycleNames([]string{"Captain Picard", "Seven Of Nine", "Data"}, sayBye)
+
+	// a1 := circleArea(10.5)
+	// a2 := circleArea(15)
+
+	// fmt.Println(a1, a2)
+	// fmt.Printf("circle 1 is %0.3f and circle 2 is %0.3f", a1, a2)
+
+
+	//Using functions
+
+//name string
+// func sayGreeting(n string) {
+// 	fmt.Printf("Good morning %v \n", n)
+// }
+
+// func sayBye(n string) {
+// 	fmt.Printf("Goodbye %v \n", n)
+// }
+
+// //calling a function for each element inside an array
+// func cycleNames(n []string, f func(string)) {
+// 	for _, v := range n {
+// 		f(v)
+// 	}
+// }
+// func circleArea(r float64) float64 {
+// 	return math.Pi * r * r
+// }
+
+// above functions can be called inside the main function down here
