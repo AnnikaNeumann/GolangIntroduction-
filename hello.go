@@ -10,7 +10,47 @@ import (
 	// "strings"
 )
 
+func main (){
 
+//MAPS (key value pairs)
+	menu := map[string]float64{
+		"soup" : 			4.99,
+		"pie" : 			7.99,
+		"salad" :			3.99,
+		"toffee pudding" : 	4.55,
+	}
+
+	fmt.Println(menu)
+	fmt.Println(menu["pie"])
+
+	//looping maps, for key, value
+	for k, v := range menu{
+		fmt.Println(k, "-", v)
+	}
+
+	// Output map[pie:7.99 salad:3.99 soup:4.99 toffee pudding:4.55]
+	// 7.99
+
+	//integers as key type
+	phonebook := map[int]string{
+		123456789 : "mario",
+		987654321 : "luigi",
+		123567932 : "peach",
+	}
+
+	fmt.Println(phonebook)
+	fmt.Println(phonebook[987654321])
+
+	// Output entire phonebook first and then key of luigi's phone number
+
+	//update phonebook entry
+	phonebook[987654321] = "bowser"
+	fmt.Println(phonebook)
+
+	phonebook[123567932] = "yoshi"
+	fmt.Println(phonebook)
+
+}
 // 
 
 //strings
